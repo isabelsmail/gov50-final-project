@@ -7,8 +7,8 @@ output:
     self_contained: false
 ---
 
-
+ 
 
 ## Project thoughts
 
-I am interested in exploring data related to the influence that parents and family members have on political affiliation. Often, I find that younger people accept and adopt the facts and opinions of those who raise them, without feeling inclined to question them. I would love to look at data that examines new voters' political stances compared to those of their parents. Ideally, I will find a data set that continues to track the new voter's affiliation for a few years after they leave their households and presumably live in their own homes (away from their parents). I am curious to see if their political affiliations change as individuals begin to experience adult life in America, or if there are any other factors that seem to affect changes in political affiliation (type of school, residental location, career, etc.)
+I am interested in exploring data related to the influence that parents and family members have on political affiliation. Often, I find that younger people accept and adopt the facts and opinions of those who raise them, without feeling inclined to question them. I would love to look at data that examines new voters' political stances compared to those of their parents. Ideally, I will find a data set that continues to track the new voter's affiliation for a few years after they leave their households and presumably live in their own homes (away from their parents). I am curious to see if their political affiliations change as individuals begin to experience adult life in America, or if there are any other factors that seem to affect changes in political affiliation (type of school, residental location, career, etc.).
