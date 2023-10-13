@@ -1,7 +1,7 @@
 ---
 title: "Gov 50 Final Project"
 author: "Isabel Smail"
-description: "The Influence of Guardians on Young Voters' Political Affiliations"
+description: "The Influence of Schooling and Hometowns on Political Affiliations"
 output:
   distill::distill_article:
     self_contained: false
@@ -10,6 +10,7 @@ output:
  
 
 ## Project thoughts
+I am interested to see whether or not education impacts Americans' political affiliations. There are many different types of education in American, for there are many different public, private, vocational, religious, or non-religious schools that students can attend. Access to schooling does play an interesting role, especially in more rural areas where schools and teaching staff might be less concentrated. Socioeconomic aspects also might come into play, for the tutition of private schooling and universities has increased dramatically in the past years. However, I am curious to see if there seems to be some sort of trend. Does the level of school seem to relate to who one votes for? 
 
 
 ```{r, show_col_types = FALSE}
@@ -19,4 +20,6 @@ View(anes_specialstudy_2020_2022_socialmedia_csv_20230705)
 
 ```
 
-## 
+## PARAGRAPH DESCRIPTION: 
+
+Does hometown location and length of schooling affect American political ideologies? In this study, my goal is to analyze the relationship between different types and lengths of schooling and how that can affect American's political affiliations. I am interested to see if the level of schooling (grad school, college, high school grad, or none) will have any correlation with level of progressiveness. I am also curious to see if the location of the schooling plays a role, for public schools' curriculums and budgets differ widely across the United States. I assume that students stemming from more rural areas who experience less schooling will likely lean more conservatively in regards to political affiliations. However, I am unsure as to whether or not there will be a correlation between a specific ideology and those who have experienced extensive schooling (grad schools/PhDs). In this study, the variable profile_educ5 displays the level of schooling of each participant, ranking numerically from lowest to highest with 5 being post-graduate degree. The variable vote20d1 displays the voter's preference for the presidential election - showing political affiliation through their supported candidate. The variables profile_state and profile_region9 both help to specifically describe the voters' location. These variables will help me to analyze the connection between schooling type, location, and poltical affiliations.  
