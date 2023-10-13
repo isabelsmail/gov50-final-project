@@ -13,10 +13,9 @@ output:
 I am interested to see whether or not education impacts Americans' political affiliations. There are many different types of education in American, for there are many different public, private, vocational, religious, or non-religious schools that students can attend. Access to schooling does play an interesting role, especially in more rural areas where schools and teaching staff might be less concentrated. Socioeconomic aspects also might come into play, for the tutition of private schooling and universities has increased dramatically in the past years. However, I am curious to see if there seems to be some sort of trend. Does the level of school seem to relate to who one votes for? 
 
 
-```{r, show_col_types = FALSE}
+```{r}
 library(readr)
-anes_specialstudy_2020_2022_socialmedia_csv_20230705 <- read_csv("~/Desktop/anes_specialstudy_2020-2022_socialmedia_csv_20230705.csv")
-View(anes_specialstudy_2020_2022_socialmedia_csv_20230705) 
+anes_specialstudy_2020_2022_socialmedia_csv_20230705 <- read_csv("~/Desktop/anes_specialstudy_2020-2022_socialmedia_csv_20230705.csv", show_col_types = FALSE)
 
 ```
 
