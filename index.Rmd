@@ -11,11 +11,12 @@ output:
 
 ## Project thoughts
 
-I am interested in exploring the relationship between education, location, and political ideologies. I am curious to see whether or not the level and type of education (private, public, religious, etc.) plays a role in how people participate in American politics. I am sure location also plays a substantial role in this relationship, since public schools across America differ widely. I am interested to see which aspect of voters' background, whether it is type of schooling or location, seems to have the highest affect on political affiliation and ideologies. 
 
-```{r}
-
-
+```{r, show_col_types = FALSE}
+library(readr)
+anes_specialstudy_2020_2022_socialmedia_csv_20230705 <- read_csv("~/Desktop/anes_specialstudy_2020-2022_socialmedia_csv_20230705.csv")
+View(anes_specialstudy_2020_2022_socialmedia_csv_20230705) 
 
 ```
 
+## 
