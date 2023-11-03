@@ -26,6 +26,7 @@ Does hometown location and length of schooling affect American political ideolog
 
 ```{r, width = 100}
 library(ggplot2)
+library(tidyverse)
 social_data1 <- EXCEL |> 
   rename(profile_state = ...17, profile_educ5 = ...13, voting = ...98, profile_region9 = ...19)  
 social_data1$profile_educ5 <- as.numeric(social_data$profile_educ5, na.rm = TRUE) 
