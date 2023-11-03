@@ -14,11 +14,46 @@ I am interested to see whether or not education impacts Americans' political aff
 
 
 ```{r}
-library(readr)
-anes_specialstudy_2020_2022_socialmedia_csv_20230705 <- read_csv("~/Desktop/anes_specialstudy_2020-2022_socialmedia_csv_20230705.csv", show_col_types = FALSE)
+library(readxl)
+EXCEL <- read_excel("~/Desktop/EXCEL.xlsx") 
+
+EXCEL
+```
+
+## Paragraph Description: 
+
+Does hometown location and length of schooling affect American political ideologies? In this study, my goal is to analyze the relationship between different types and lengths of schooling and how that can affect American's political affiliations. I am interested to see if the level of schooling (grad school, college, high school grad, or none) will have any correlation with level of progressiveness. I am also curious to see if the location of the schooling plays a role, for public schools' curriculums and budgets differ widely across the United States. I assume that students stemming from more rural areas who experience less schooling will likely lean more conservatively in regards to political affiliations. However, I am unsure as to whether or not there will be a correlation between a specific ideology and those who have experienced extensive schooling (grad schools/PhDs). In this study, the variable profile_educ5 displays the level of schooling of each participant, ranking numerically from lowest to highest with 5 being post-graduate degree. The variable vote20d1 displays the voter's preference for the presidential election - showing political affiliation through their supported candidate. The variables profile_state and profile_region9 both help to specifically describe the voters' location. These variables will help me to analyze the connection between schooling type, location, and poltical affiliations.  
+
+```{r, width = 100}
+library(ggplot2)
+social_data1 <- EXCEL |> 
+  rename(profile_state = ...17, profile_educ5 = ...13, voting = ...98, profile_region9 = ...19)  
+social_data1$profile_educ5 <- as.numeric(social_data$profile_educ5, na.rm = TRUE) 
+
+social_graph <- social_data1 |> 
+  mutate(region = case_when(
+    profile_region9 == 1 ~ "New England",
+    profile_region9 == 2 ~ "Mid-Atlantic",
+    profile_region9 == 3 ~ "East North Central",
+    profile_region9 == 4 ~ "West North Central",
+    profile_region9 == 5 ~ "South Atlantic",
+    profile_region9 == 6 ~ "East South Central",
+    profile_region9 == 7 ~ "West South Central",
+    profile_region9 == 8 ~ "Mountain")) |> 
+  mutate(voter_pref = case_when(
+    voting == -7 ~ "No Response",
+    voting == 1 ~ "Trump Supporter",
+    voting == 2 ~ "Biden Supporter",
+    voting == 3 ~ "Supporter of Someone Else",
+    voting == 4 ~ "Doesn't Intend to Vote"))|> 
+  group_by(region, voter_pref, profile_educ5) |> 
+  summarize(avg_education = mean(profile_educ5)) |>
+  ggplot(mapping = aes(x= voter_pref, y = avg_education, fill = voter_pref)) + geom_col(binwidth = .00005) + facet_wrap(vars(region)) + labs(x = "Voter Choice for 2020 Election", y = "Average Education", title = "Relationship Between Voter Preference and Average Level of Education")
+
+social_graph
+
+``` 
 
 ```
 
-## PARAGRAPH DESCRIPTION: 
 
-Does hometown location and length of schooling affect American political ideologies? In this study, my goal is to analyze the relationship between different types and lengths of schooling and how that can affect American's political affiliations. I am interested to see if the level of schooling (grad school, college, high school grad, or none) will have any correlation with level of progressiveness. I am also curious to see if the location of the schooling plays a role, for public schools' curriculums and budgets differ widely across the United States. I assume that students stemming from more rural areas who experience less schooling will likely lean more conservatively in regards to political affiliations. However, I am unsure as to whether or not there will be a correlation between a specific ideology and those who have experienced extensive schooling (grad schools/PhDs). In this study, the variable profile_educ5 displays the level of schooling of each participant, ranking numerically from lowest to highest with 5 being post-graduate degree. The variable vote20d1 displays the voter's preference for the presidential election - showing political affiliation through their supported candidate. The variables profile_state and profile_region9 both help to specifically describe the voters' location. These variables will help me to analyze the connection between schooling type, location, and poltical affiliations.  
