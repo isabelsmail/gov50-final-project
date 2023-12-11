@@ -171,7 +171,7 @@ education <- education |>
   mutate(voting = as.numeric((voting)))
 
 lm1 <- lm(voting ~ profile_educ5 + region, data = education)
-lm1
+
 
 regression <- summary(lm1) 
 regression 
